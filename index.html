@@ -1,0 +1,292 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.rehber{padding:1rem 0}
+.gun-kart{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);margin-bottom:12px;overflow:hidden;background:var(--color-background-primary)}
+.gun-baslik{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none;background:var(--color-background-secondary)}
+.gun-baslik:hover{background:var(--color-background-tertiary)}
+.gun-rozet{font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px;white-space:nowrap}
+.gun-baslik h3{font-size:15px;font-weight:500;color:var(--color-text-primary);flex:1}
+.gun-baslik .alt{font-size:12px;color:var(--color-text-secondary)}
+.chevron{width:16px;height:16px;transition:transform .2s;color:var(--color-text-tertiary);flex-shrink:0}
+.chevron.acik{transform:rotate(180deg)}
+.gun-icerik{padding:0 18px;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .2s}
+.gun-icerik.acik{max-height:2400px;padding:18px}
+.blok{margin-bottom:20px}
+.blok:last-child{margin-bottom:0}
+.blok-baslik{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.saat{font-size:12px;font-weight:500;color:var(--color-text-secondary);background:var(--color-background-secondary);padding:3px 9px;border-radius:20px;border:0.5px solid var(--color-border-tertiary)}
+.blok-baslik span{font-size:13px;font-weight:500;color:var(--color-text-primary)}
+.yer-listesi{display:flex;flex-direction:column;gap:8px}
+.yer{display:flex;gap:12px;align-items:flex-start}
+.yer-icerik{flex:1}
+.yer-adi{font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:2px}
+.yer-aciklama{font-size:12px;color:var(--color-text-secondary);line-height:1.5}
+.gorsel-yer{width:72px;height:56px;border-radius:var(--border-radius-md);background:var(--color-background-tertiary);border:0.5px dashed var(--color-border-secondary);display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer}
+.gorsel-yer:hover{border-color:var(--color-border-primary)}
+.gorsel-yer svg{width:18px;height:18px;color:var(--color-text-tertiary)}
+.gorsel-yer img{width:72px;height:56px;object-fit:cover;border-radius:var(--border-radius-md)}
+.ayirici{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:14px 0}
+.not-kutu{background:var(--color-background-secondary);border-left:3px solid var(--color-border-secondary);border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;padding:10px 14px;font-size:12px;color:var(--color-text-secondary);line-height:1.6}
+.opsiyon-grup{display:flex;flex-direction:column;gap:10px}
+.opsiyon{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);overflow:hidden}
+.opsiyon-baslik{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--color-background-secondary);cursor:pointer}
+.opsiyon-baslik:hover{background:var(--color-background-tertiary)}
+.opsiyon-baslik h4{font-size:13px;font-weight:500;flex:1;color:var(--color-text-primary)}
+.opsiyon-icerik{padding:0 14px;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .2s}
+.opsiyon-icerik.acik{max-height:1000px;padding:12px 14px}
+.yesil{background:#E1F5EE;color:#0F6E56}
+.mavi{background:#E6F1FB;color:#185FA5}
+.sari{background:#FAEEDA;color:#854F0B}
+.etiket-sira{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.etiket{font-size:11px;padding:2px 8px;border-radius:20px}
+.etiket.iyi{background:#E1F5EE;color:#0F6E56}
+.etiket.kotu{background:#FCEBEB;color:#A32D2D}
+.tren-satir{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--color-text-secondary);margin:6px 0}
+.tren-ikon{width:20px;height:20px;border-radius:4px;background:#E6F1FB;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.prompt-btn{display:inline-flex;align-items:center;gap:4px;margin-top:10px;padding:6px 12px;font-size:12px;background:transparent;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);cursor:pointer;color:var(--color-text-secondary)}
+.prompt-btn:hover{background:var(--color-background-secondary)}
+</style>
+
+<div class="rehber">
+
+<div class="gun-kart">
+  <div class="gun-baslik" onclick="toggle(this)">
+    <span class="gun-rozet mavi">Gün 1</span>
+    <div><h3>Varış — Roma'ya ilk adım</h3><div class="alt">14:00 sonrası · Trevi, Pantheon, Trastevere</div></div>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="gun-icerik acik">
+    <div class="blok">
+      <div class="blok-baslik"><span class="saat">14:00 – 15:00</span><span>Otel yerleşme</span></div>
+      <div class="not-kutu">Bavulları bırak, hafif bir şeyler ye. Gece Trastevere'de yemek yiyeceğiz, öğlen çok dolma.</div>
+    </div>
+    <hr class="ayirici">
+    <div class="blok">
+      <div class="blok-baslik"><span class="saat">16:00 – 18:30</span><span>Tarihi merkez turu</span></div>
+      <div class="yer-listesi">
+        <div class="yer">
+          <div class="gorsel-yer"><img src="roma_images/trevi.jpg" alt="Trevi Çeşmesi"></div>
+          <div class="yer-icerik"><div class="yer-adi">Trevi Çeşmesi</div><div class="yer-aciklama">Dünyanın en ünlü Barok çeşmesi. Omzunun üzerinden bozuk para at — efsaneye göre geri dönürsün. Erken saatte kalabalık az olur.</div></div>
+        </div>
+        <div class="yer">
+          <div class="gorsel-yer"><img src="roma_images/pantheon.jpg" alt="Pantheon Roma"></div>
+          <div class="yer-icerik"><div class="yer-adi">Pantheon</div><div class="yer-aciklama">MÖ 125'ten beri ayakta duran, dünyanın en iyi korunmuş antik yapısı. Tavandaki oculus yağmurda büyülü bir manzara sunar.</div></div>
+        </div>
+        <div class="yer">
+          <div class="gorsel-yer"><img src="roma_images/piazza_navona.jpg" alt="Piazza Navona Roma"></div>
+          <div class="yer-icerik"><div class="yer-adi">Piazza Navona</div><div class="yer-aciklama">Roma'nın en canlı meydanı. Bernini'nin Dört Nehir Çeşmesi tam ortada. Sokak ressamları ve kafeler arasında nefes al.</div></div>
+        </div>
+      </div>
+    </div>
+    <hr class="ayirici">
+    <div class="blok">
+      <div class="blok-baslik"><span class="saat">20:00</span><span>Trastevere — akşam yemeği</span></div>
+      <div class="not-kutu">Roma'nın en otantik mahallesi. Dar taş sokaklar, sarmaşıklı duvarlar, aile restoranları. Cacio e pepe veya supplì mutlaka dene. Rezervasyon önerilir.</div>
+    </div>
+    <button class="prompt-btn" onclick="sendPrompt('Trastevere\'de akşam yemeği için restoran önerileri verir misin?')">Restoran öner ↗</button>
+  </div>
+</div>
+
+<div class="gun-kart">
+  <div class="gun-baslik" onclick="toggle(this)">
+    <span class="gun-rozet" style="background:#FAECE7;color:#712B13">Gün 2</span>
+    <div><h3>Antik Roma — tam gün</h3><div class="alt">Kolezyum · Forum · Palatino · Monti</div></div>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="gun-icerik">
+    <div class="blok">
+      <div class="blok-baslik"><span class="saat">08:30 – 12:30</span><span>Antik Roma kalbi</span></div>
+      <div class="yer-listesi">
+        <div class="yer">
+          <div class="gorsel-yer"><img src="roma_images/colosseum.webp" alt="Colosseum Rome aerial"></div>
+          <div class="yer-icerik"><div class="yer-adi">Kolezyum</div><div class="yer-aciklama">50.000 seyircili gladyatör arenası. Online bilet al, kuyruk saatler sürebilir. Zemin katın altındaki tüneller ayrı tur gerektiriyor, değer.</div></div>
+        </div>
+        <div class="yer">
+          <div class="gorsel-yer"><img src="roma_images/roman_forum.jpg" alt="Roman Forum ruins golden hour"></div>
+          <div class="yer-icerik"><div class="yer-adi">Roma Forumu</div><div class="yer-aciklama">Antik Roma'nın siyasi ve ticari merkezi. Tapınak kalıntıları arasında yürümek tuhaf derecede etkileyici. Aynı biletle giriş.</div></div>
+        </div>
+        <div class="yer">
+          <div class="gorsel-yer"><img src="roma_images/palatine.jpg" alt="Palatino Hill Rome view"></div>
+          <div class="yer-icerik"><div class="yer-adi">Palatino Tepesi</div><div class="yer-aciklama">İmparatorların saraylarının bulunduğu tepe. Roma Forumu'na bakan en güzel manzara noktası buradan.</div></div>
+        </div>
+      </div>
+    </div>
+    <hr class="ayirici">
+    <div class="blok">
+      <div class="blok-baslik"><span class="saat">13:00 – 15:00</span><span>Öğle + dinlenme</span></div>
+      <div class="not-kutu">Forum çıkışına yakın Testaccio semtinde öğle. Sabah çok yürüdün — otelde kısa bir mola veya kafede otur.</div>
+    </div>
+    <hr class="ayirici">
+    <div class="blok">
+      <div class="blok-baslik"><span class="saat">15:30 – 18:00</span><span>Öğleden sonra</span></div>
+      <div class="yer-listesi">
+        <div class="yer">
+          <div class="gorsel-yer"><img src="roma_images/vittoriano.jpg" alt="Vittoriano terrace Rome panorama"></div>
+          <div class="yer-icerik"><div class="yer-adi">Vittoriano Teras</div><div class="yer-aciklama">Üst terrasa asansörle çık. Roma'nın 360 derece panoraması. Özellikle öğleden sonra ışıkta muhteşem.</div></div>
+        </div>
+        <div class="yer">
+          <div class="gorsel-yer"><img src="roma_images/monti.jpg" alt="Monti neighborhood Rome street"></div>
+          <div class="yer-icerik"><div class="yer-adi">Monti Bölgesi</div><div class="yer-aciklama">Roma'nın hipster mahallesi. Vintage dükkanlar, küçük barlar, yerel kafeler. Aperitivo saati için ideal.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gun-kart">
+  <div class="gun-baslik" onclick="toggle(this)">
+    <span class="gun-rozet" style="background:#EEEDFE;color:#3C3489">Gün 3</span>
+    <div><h3>Vatikan — tam gün</h3><div class="alt">Müzeler · Sistine · Aziz Petrus · Tiber</div></div>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="gun-icerik">
+    <div class="blok">
+      <div class="not-kutu" style="margin-bottom:12px">Vatikan Müzeleri için mutlaka önceden online bilet al. Kıyafet kuralı: omuzlar ve dizler kapalı olmalı.</div>
+      <div class="blok-baslik"><span class="saat">08:00 – 12:30</span><span>Vatikan Müzeleri</span></div>
+      <div class="yer-listesi">
+        <div class="yer">
+          <div class="gorsel-yer"><img src="roma_images/vatican_museums.jpg" alt="Vatican Museums spiral staircase"></div>
+          <div class="yer-icerik"><div class="yer-adi">Vatikan Müzeleri</div><div class="yer-aciklama">7 km yürüyüş mesafesinde sanat. Belvedere Avlusu, Haritalar Galerisi ve spiral merdiven fotoğraf için vazgeçilmez.</div></div>
+        </div>
+        <div class="yer">
+          <div class="gorsel-yer"><img src="roma_images/sistine.jpg" alt="Sistine Chapel ceiling Michelangelo"></div>
+          <div class="yer-icerik"><div class="yer-adi">Sistine Şapeli</div><div class="yer-aciklama">Michelangelo'nun 4 yılda boyadığı tavan freski. Fotoğraf çekmek yasak ama sessizce yukarı bak — kelimeler yetmez.</div></div>
+        </div>
+      </div>
+    </div>
+    <hr class="ayirici">
+    <div class="blok">
+      <div class="blok-baslik"><span class="saat">13:00 – 15:30</span><span>Aziz Petrus</span></div>
+      <div class="yer-listesi">
+        <div class="yer">
+          <div class="gorsel-yer"><img src="roma_images/st_peter_basilica.jpg" alt="St Peters Basilica interior dome"></div>
+          <div class="yer-icerik"><div class="yer-adi">Aziz Petrus Bazilikası</div><div class="yer-aciklama">Dünyanın en büyük kilisesi. Michelangelo'nun Pieta heykeli burada. Kubbeye çıkabilirsin — 320 basamak veya asansör.</div></div>
+        </div>
+        <div class="yer">
+          <div class="gorsel-yer"><img src="roma_images/st_peter_square.jpg" alt="St Peters Square Vatican aerial"></div>
+          <div class="yer-icerik"><div class="yer-adi">Aziz Petrus Meydanı</div><div class="yer-aciklama">Bernini'nin kolonnatlı meydanı. 284 sütun, 140 aziz heykeli. Ortadaki obelisk MS 37'den bu yana burada duruyor.</div></div>
+        </div>
+      </div>
+    </div>
+    <hr class="ayirici">
+    <div class="blok">
+      <div class="blok-baslik"><span class="saat">18:00</span><span>Tiber Nehri akşamı</span></div>
+      <div class="not-kutu">Castel Sant'Angelo önünden Tiber boyunca yürü. Köprüden gün batımı manzarası. Lungotevere caddesinde aperitivo.</div>
+    </div>
+  </div>
+</div>
+
+<div class="gun-kart">
+  <div class="gun-baslik" onclick="toggle(this)">
+    <span class="gun-rozet" style="background:#EAF3DE;color:#27500A">Gün 4</span>
+    <div><h3>Opsiyon günü — tren kararı</h3><div class="alt">Floransa A · Floransa+Pisa B · Sadece Pisa C</div></div>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="gun-icerik">
+    <div class="opsiyon-grup">
+      <div class="opsiyon">
+        <div class="opsiyon-baslik" onclick="toggleOps(this)">
+          <span class="gun-rozet mavi">Opsiyon A</span>
+          <h4>Sadece Floransa — en dengeli</h4>
+          <svg style="width:14px;height:14px;transition:transform .2s;color:var(--color-text-tertiary)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="opsiyon-icerik acik">
+          <div class="tren-satir"><div class="tren-ikon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 2H8l-2 5h12z"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/></svg></div>07:00 Roma Termini → 09:00 Floransa (hızlı tren ~90dk)</div>
+          <div class="yer-listesi" style="margin:10px 0">
+            <div class="yer">
+              <div class="gorsel-yer"><img src="roma_images/duomo.jpg" alt="Florence Cathedral Duomo exterior"></div>
+              <div class="yer-icerik"><div class="yer-adi">Floransa Katedrali (Duomo)</div><div class="yer-aciklama">Brunelleschi'nin kırmızı kiremit kubbesi. İçi mütevazı ama kubbeye çıkış nefes kesiyor.</div></div>
+            </div>
+            <div class="yer">
+              <div class="gorsel-yer"><img src="roma_images/ponte_vecchio.jpg" alt="Ponte Vecchio Florence sunset"></div>
+              <div class="yer-icerik"><div class="yer-adi">Ponte Vecchio</div><div class="yer-aciklama">Arno üzerindeki tarihi köprü, üstünde mücevher dükkanları. Gün batımı ışığında Arno manzarası ikonik.</div></div>
+            </div>
+            <div class="yer">
+              <div class="gorsel-yer"><img src="roma_images/piazzale_michelangelo.jpg" alt="Piazzale Michelangelo Florence panorama"></div>
+              <div class="yer-icerik"><div class="yer-adi">Piazzale Michelangelo</div><div class="yer-aciklama">17:30'da burada ol. Floransa'nın tüm silueti önünde, gün batımı arkanda. Tripik fotoğraf garantisi.</div></div>
+            </div>
+          </div>
+          <div class="tren-satir"><div class="tren-ikon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 2H8l-2 5h12z"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/></svg></div>19:00 Floransa → 20:30 Roma dönüş</div>
+          <div class="etiket-sira"><span class="etiket iyi">Dengeli</span><span class="etiket iyi">Yorucu değil</span><span class="etiket iyi">Şehir hissi</span></div>
+        </div>
+      </div>
+
+      <div class="opsiyon">
+        <div class="opsiyon-baslik" onclick="toggleOps(this)">
+          <span class="gun-rozet sari">Opsiyon B</span>
+          <h4>Floransa + Pisa — yoğun gün</h4>
+          <svg style="width:14px;height:14px;transition:transform .2s;color:var(--color-text-tertiary)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="opsiyon-icerik">
+          <div class="tren-satir"><div class="tren-ikon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 2H8l-2 5h12z"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/></svg></div>06:50 Roma → 08:20 Floransa</div>
+          <div style="font-size:12px;color:var(--color-text-secondary);margin:8px 0">08:30–11:00 Duomo dışı + Ponte Vecchio hızlı</div>
+          <div class="tren-satir"><div class="tren-ikon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 2H8l-2 5h12z"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/></svg></div>11:30 Floransa → 12:30 Pisa</div>
+          <div class="yer" style="margin:8px 0">
+            <div class="gorsel-yer"><img src="roma_images/pisa.jpg" alt="Leaning Tower of Pisa Campo dei Miracoli"></div>
+            <div class="yer-icerik"><div class="yer-adi">Pisa Kulesi + Campo dei Miracoli</div><div class="yer-aciklama">12:30–15:00 arası. "Kuleyi tutan" fotoğrafı çek, etraf sana katılır. Vaftizane ve Katedral de aynı alanda.</div></div>
+          </div>
+          <div class="tren-satir"><div class="tren-ikon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 2H8l-2 5h12z"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/></svg></div>15:30 Pisa → 19:00 Roma (uzun dönüş)</div>
+          <div class="etiket-sira"><span class="etiket iyi">2 şehir</span><span class="etiket kotu">Çok yorucu</span><span class="etiket kotu">Uzun tren</span></div>
+        </div>
+      </div>
+
+      <div class="opsiyon">
+        <div class="opsiyon-baslik" onclick="toggleOps(this)">
+          <span class="gun-rozet yesil">Opsiyon C</span>
+          <h4>Sadece Pisa — rahat gün</h4>
+          <svg style="width:14px;height:14px;transition:transform .2s;color:var(--color-text-tertiary)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="opsiyon-icerik">
+          <div class="tren-satir"><div class="tren-ikon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 2H8l-2 5h12z"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/></svg></div>08:00 Roma → 11:30 Pisa</div>
+          <div style="font-size:12px;color:var(--color-text-secondary);margin:8px 0 4px">11:30–14:30 Kule + Campo dei Miracoli · öğle</div>
+          <div class="tren-satir"><div class="tren-ikon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 2H8l-2 5h12z"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/></svg></div>15:00–19:00 Roma dönüş</div>
+          <div class="etiket-sira"><span class="etiket iyi">En az stres</span><span class="etiket kotu">Az içerik</span></div>
+        </div>
+      </div>
+    </div>
+    <button class="prompt-btn" onclick="sendPrompt('Roma-Floransa treni için bilet nasıl alınır, ne kadar tutar?')">Tren bileti bilgisi ↗</button>
+  </div>
+</div>
+
+<div class="gun-kart">
+  <div class="gun-baslik" onclick="toggle(this)">
+    <span class="gun-rozet" style="background:#F1EFE8;color:#444441">Gün 5</span>
+    <div><h3>Dönüş — son sabah</h3><div class="alt">Trevi · Kahve · Havaalanı</div></div>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="gun-icerik">
+    <div class="blok">
+      <div class="not-kutu">Bavulları erken hazırla veya otele bırak (genelde 15:00'e kadar saklarlar). Sabahı yavaş değerlendir.</div>
+      <div class="yer-listesi" style="margin-top:12px">
+        <div class="yer">
+          <div class="gorsel-yer"><img src="roma_images/trevi.jpg" alt="Trevi Fountain morning empty"></div>
+          <div class="yer-icerik"><div class="yer-adi">Trevi'ye son uğrayış</div><div class="yer-aciklama">Sabah erken saatte kalabalıksız bir Trevi. İlk günün kalabalığıyla kıyasla — çok farklı bir his.</div></div>
+        </div>
+      </div>
+      <div class="not-kutu" style="margin-top:12px">Roma kahvesi ritüeli: ayakta espresso, bar üzerinde. Oturarak içmek genelde 2-3 kat pahalı.</div>
+    </div>
+    <button class="prompt-btn" onclick="sendPrompt('Roma havaalanına ulaşım seçenekleri neler, ne kadar sürer?')">Havaalanı ulaşım ↗</button>
+  </div>
+</div>
+
+</div>
+
+<script>
+function toggle(el){
+  var ic=el.nextElementSibling;
+  var ch=el.querySelector('.chevron');
+  var isAcik=ic.classList.contains('acik');
+  ic.classList.toggle('acik',!isAcik);
+  ch.classList.toggle('acik',!isAcik);
+}
+function toggleOps(el){
+  var ic=el.nextElementSibling;
+  var ch=el.querySelector('svg:last-child');
+  var isAcik=ic.classList.contains('acik');
+  ic.classList.toggle('acik',!isAcik);
+  if(ch) ch.style.transform=isAcik?'':'rotate(180deg)';
+}
+function gorselEkle(el,prompt){}
+</script>
